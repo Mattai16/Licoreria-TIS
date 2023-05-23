@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion licorerias</title>
+
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(96, 96, 96);
+      }
+      li {
+        display: inline-block;
+      }
+      li a {
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: white;
+        font-size: 20px; 
+      }
+
+      li a:hover{
+        background-color: rgb(0, 0, 0,0.1);
+      }
+    </style>
+
+</head>
+<body>
+
+  <ul>
+    <li><a href="#" onclick="handleClick('/')">Inicio</a></li>
+    <li><a href="#" onclick="handleClick('/licorerias')" >Licorerias</a></li>
+    <li><a href="#" onclick="handleClick('/empleados')">Empleados</a></li>
+    <li><a href="#" onclick="handleClick('/productos')">Productos</a></li>
+  </ul>
+
+
+  <script>
+    function handleClick(route) {
+      event.preventDefault();
+      window.location.href = route;
+    }
+  </script>
+
+
+
+</body>
+</html>
