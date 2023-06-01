@@ -6,6 +6,9 @@ import { Licorerias } from './components/Licorerias';
 import Navbar from './components/Navbar';
 import { Productos } from './components/Productos';
 import './estilos/global.css'
+import { EditEmpleado } from './edits/EditEmpleado';
+import { EditLicoreria } from './edits/EditLicoreria';
+import { EditProducto } from './edits/EditProducto';
 
 const router = createBrowserRouter([
 
@@ -28,6 +31,21 @@ const router = createBrowserRouter([
     path: '/productos',
     element: <Productos/>,
   },
+
+  {
+    path: '/editarEmpleado/:id',
+    element: <EditEmpleado/>,
+  },
+
+  {
+    path: '/editarLicoreria/:id',
+    element: <EditLicoreria/>,
+  },
+
+  {
+    path: '/editarProducto/:id',
+    element: <EditProducto/>,
+  }
 
 ])
 

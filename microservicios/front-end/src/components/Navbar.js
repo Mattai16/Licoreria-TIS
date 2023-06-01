@@ -34,11 +34,11 @@ export default function Navbar() {
         <li><Link to="/licorerias" >Licorerias</Link></li>
         <li><Link to="/empleados" >Empleados</Link></li>
         <li><Link to="/productos" >Productos</Link></li>
-        <li><Link >
+{/*         <li><Link >
           <button type="button" className="btn btn-outline-light end-0">
             Carrito <span className="badge text-bg-light ">0</span>
           </button></Link>
-        </li>
+        </li> */}
 
       </ul>
     </>

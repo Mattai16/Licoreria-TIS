@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export const Productos = () => {
 
     const [productos, setProductos] = useState([])
+
+    const {id} = useParams()
 
     useEffect(() => {
         getProductos();
@@ -19,6 +21,10 @@ export const Productos = () => {
     }
 
 
+    const deleteProducto = async (id) =>{
+        await axios.delete(`http://localhost:8084/producto/${id}`);
+        getProductos()
+    }
 
 
     return (
@@ -38,7 +44,8 @@ export const Productos = () => {
                                     <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officiis, eius maiores nulla repellat dolor ut illo quod.</p>
                                     <div className="d-flex align-items-end justify-content-between">
                                         <span className="card-title ">{"Precio: $" + producto.precio}</span>
-                                        <Link type="button" className="btn btn-outline-light">Comprar</Link>
+                                        <Link onClick={() => deleteProducto(producto.idProducto)} type="button" className="btn btn-outline-light flex-fill me-2 ms-3">Eliminar</Link>
+                                        <Link to={`/editarProducto/${producto.idProducto}`} type="button" className="btn btn-outline-light flex-fill">Editar</Link>
                                     </div>
                                 </div>
 
