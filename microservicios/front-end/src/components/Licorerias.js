@@ -15,17 +15,17 @@ export const Licorerias = () => {
 
 
     const getLicorerias = async () => {
-        const result = await axios.get("http://localhost:8084/licorerias");
+        const result = await axios.get("http://localhost:8080/licorerias");
         setLicorerias(result.data)
     }
 
     const deleteLicoreria = async (id) =>{
-        await axios.delete(`http://localhost:8084/licoreria/${id}`);
+        await axios.delete(`http://localhost:8080/licoreria/${id}`);
         getLicorerias();
     }
 
     const deleteEmpleado = async (id) =>{
-        await axios.delete(`http://localhost:8084/licoreria/${id}`);
+        await axios.delete(`http://localhost:8080/licoreria/${id}`);
         getLicorerias()
     }
 

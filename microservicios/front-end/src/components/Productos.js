@@ -16,13 +16,13 @@ export const Productos = () => {
 
 
     const getProductos = async () => {
-        const result = await axios.get("http://localhost:8084/productos");
+        const result = await axios.get("http://localhost:8080/productos");
         setProductos(result.data)
     }
 
 
     const deleteProducto = async (id) =>{
-        await axios.delete(`http://localhost:8084/producto/${id}`);
+        await axios.delete(`http://localhost:8080/producto/${id}`);
         getProductos()
     }
 

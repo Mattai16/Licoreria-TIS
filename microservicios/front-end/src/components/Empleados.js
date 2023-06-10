@@ -16,12 +16,12 @@ export const Empleados = () => {
 
 
     const getEmpleados = async () => {
-        const result = await axios.get("http://localhost:8084/empleados");
+        const result = await axios.get("http://localhost:8080/empleados");
         setEmpleados(result.data)
     }
 
     const deleteEmpleado = async (id) =>{
-        await axios.delete(`http://localhost:8084/empleado/${id}`);
+        await axios.delete(`http://localhost:8080/empleado/${id}`);
         getEmpleados()
     }
 

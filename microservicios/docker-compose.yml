@@ -1,0 +1,60 @@
+#Usario y contraseña de la BD no incluidas
+version: '3'
+services:
+  springboot1:
+    build:
+      context: ./backend-licoreria
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://aws.connect.psdb.cloud/licorerias
+      - SPRING_DATASOURCE_USERNAME=
+      - SPRING_DATASOURCE_PASSWORD=
+      - SOAP_SERVICE_PATH=/soap
+
+  springboot2:
+    build:
+      context: ./empleado
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://aws.connect.psdb.cloud/licorerias
+      - SPRING_DATASOURCE_USERNAME=
+      - SPRING_DATASOURCE_PASSWORD=
+      - SOAP_SERVICE_PATH=/soap/empleados
+
+  springboot3:
+    build:
+      context: ./tienda
+      dockerfile: Dockerfile
+    ports:
+      - 8082:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://aws.connect.psdb.cloud/licorerias
+      - SPRING_DATASOURCE_USERNAME=
+      - SPRING_DATASOURCE_PASSWORD=
+      - SOAP_SERVICE_PATH=/soap 
+
+  springboot4:
+    build:
+      context: ./producto
+      dockerfile: Dockerfile
+    ports:
+      - 8083:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://aws.connect.psdb.cloud/licorerias
+      - SPRING_DATASOURCE_USERNAME=
+      - SPRING_DATASOURCE_PASSWORD=
+      - SOAP_SERVICE_PATH=/soap
+
+  reactapp:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+
+volumes:
+  db_data:

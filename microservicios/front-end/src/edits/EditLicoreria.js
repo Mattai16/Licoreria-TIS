@@ -36,13 +36,13 @@ export const EditLicoreria = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:8084/licoreria/${id}`, licoreria);
+        await axios.put(`http://localhost:8080/licoreria/${id}`, licoreria);
         navigate("/licorerias");
     };
 
 
     const loadLicoreria = async () => {
-        const result = await axios.get(`http://localhost:8084/licoreria/${id}`)
+        const result = await axios.get(`http://localhost:8080/licoreria/${id}`)
         setLicoreria(result.data)
     }
 

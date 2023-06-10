@@ -37,13 +37,13 @@ export const EditProducto = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:8084/producto/${id}`, producto);
+        await axios.put(`http://localhost:8080/producto/${id}`, producto);
         navigate("/productos");
     };
 
 
     const loadProducto = async () => {
-        const result = await axios.get(`http://localhost:8084/producto/${id}`)
+        const result = await axios.get(`http://localhost:8080/producto/${id}`)
         setProducto(result.data)
     }
 

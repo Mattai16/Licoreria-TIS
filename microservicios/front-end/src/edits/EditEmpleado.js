@@ -31,13 +31,13 @@ export const EditEmpleado = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:8084/empleado/${id}`, empleado);
+        await axios.put(`http://localhost:8080/empleado/${id}`, empleado);
         navigate("/empleados");
     };
 
 
     const loadEmpleado = async () => {
-        const result = await axios.get(`http://localhost:8084/empleado/${id}`)
+        const result = await axios.get(`http://localhost:8080/empleado/${id}`)
         setEmpleado(result.data)
     }
 
